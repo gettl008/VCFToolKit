@@ -8,12 +8,23 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vcfallelefreqs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1163" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="450" />
-    <option name="y" value="307" />
+    <option name="x" value="180" />
+    <option name="y" value="150" />
     <option name="width" value="1260" />
     <option name="height" value="684" />
   </component>
@@ -22,8 +33,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="VCFToolKit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VCFToolKit" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -52,9 +73,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="450" y="307" width="1260" height="684" extended-state="0" />
+    <frame x="180" y="150" width="1260" height="684" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536946" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25779969" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -74,5 +96,12 @@
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
     </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vcfallelefreqs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1163" />
+      </provider>
+    </entry>
   </component>
 </project>
