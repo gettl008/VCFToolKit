@@ -102,7 +102,9 @@ def filterVcfFreqs(vcfdict, vcf, args):
     print "filtervcffreqs"
     outdict = {'header': vcfdict['header']}
     outvcf = []
+    Q = 0
     for vcfline in vcf:
+        Q = Q + 1
         if not vcfline.startswith('#'):
             for f_line in vcfdict[vcfline]:
                 freqline = f_line.split('\t')
@@ -113,7 +115,8 @@ def filterVcfFreqs(vcfdict, vcf, args):
                     fdiff = abs(max(freqs) - min(freqs))
                     avg_freq = sum(freqs) / len(freqs)
                     if (args.min_freq and float(args.min_freq) <= float(avg_freq) <= float(args.max_freq)) or not args.min_freq:
-                            if len(freqs) > 1:
+                            if args.autocorrelation and len(freqs) > 1:
+                                print(Q)
                                 a = autocorr(freqs)
                             else:
                                 a = 0
@@ -186,7 +189,8 @@ def main():
         vcf = vcfSortBySample(vcf, args.samples)
     annots = args.output_annotations.split(',')
     outdict = alleleFreqs(vcf, annots, args)
-    outdict, outvcf = filterVcfFreqs(outdict, vcf, args)
+    if args.diff or args.autocorrelation or args.min_depth or args.min_freq or args.max_freq:
+        outdict, outvcf = filterVcfFreqs(outdict, vcf, args)
     #args.diff, args.autocorrelation, args.min_depth, args.min_freq,
     #                                 args.max_freq)
     samples = [s for s in outvcf if '#CHROM' in s][0].split('\t')[9:]
@@ -207,3 +211,9 @@ def main():
 
 
 main()
+
+
+
+# Issues:
+# Chromosomes need to be in correct order in  header
+# BK006938.2
