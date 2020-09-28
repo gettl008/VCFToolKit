@@ -189,8 +189,7 @@ def main():
         vcf = vcfSortBySample(vcf, args.samples)
     annots = args.output_annotations.split(',')
     outdict = alleleFreqs(vcf, annots, args)
-    if args.diff or args.autocorrelation or args.min_depth or args.min_freq or args.max_freq:
-        outdict, outvcf = filterVcfFreqs(outdict, vcf, args)
+    outdict, outvcf = filterVcfFreqs(outdict, vcf, args)
     #args.diff, args.autocorrelation, args.min_depth, args.min_freq,
     #                                 args.max_freq)
     samples = [s for s in outvcf if '#CHROM' in s][0].split('\t')[9:]
