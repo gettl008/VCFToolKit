@@ -102,9 +102,9 @@ def filterVcfFreqs(vcfdict, vcf, args):
     print "filtervcffreqs"
     outdict = {'header': vcfdict['header']}
     outvcf = []
-    Q = 0
+    # Q = 0
     for vcfline in vcf:
-        Q = Q + 1
+        # Q = Q + 1
         if not vcfline.startswith('#'):
             for f_line in vcfdict[vcfline]:
                 freqline = f_line.split('\t')
@@ -116,7 +116,7 @@ def filterVcfFreqs(vcfdict, vcf, args):
                     avg_freq = sum(freqs) / len(freqs)
                     if (args.min_freq and float(args.min_freq) <= float(avg_freq) <= float(args.max_freq)) or not args.min_freq:
                             if args.autocorrelation and len(freqs) > 1:
-                                print(Q)
+                                # print(Q)
                                 a = autocorr(freqs)
                             else:
                                 a = 0
